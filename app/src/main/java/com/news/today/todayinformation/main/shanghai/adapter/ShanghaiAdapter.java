@@ -3,6 +3,7 @@ package com.news.today.todayinformation.main.shanghai.adapter;
 import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.news.today.todayinformation.R;
+import com.news.today.todayinformation.main.shanghai.dto.Md5Utils;
 import com.news.today.todayinformation.main.shanghai.dto.ShanghaiBean;
 
 import java.util.ArrayList;
@@ -83,7 +85,8 @@ public class ShanghaiAdapter extends RecyclerView.Adapter{
                 public void onClick(View v) {
                     int position = (int) v.getTag();
                     ShanghaiBean shanghaiBean = mData.get(position);
-                    Toast.makeText(mContext,"被点击了 = " + position + " " + shanghaiBean.getmDec(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext,"被点击了 = " + position + " " + Md5Utils.md5("1"),Toast.LENGTH_LONG).show();
+                    Log.e("ShanghaiViewHolder", Md5Utils.md5("1"));
                 }
             });
             mIv.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +94,8 @@ public class ShanghaiAdapter extends RecyclerView.Adapter{
                 public void onClick(View v) {
                     int position = (int) v.getTag();
                     ShanghaiBean shanghaiBean = mData.get(position);
-                    Toast.makeText(mContext,"被点击了 = " + position + " " + shanghaiBean.getmDec(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(mContext,"被点击了 = " + position + " " + Md5Utils.md5("jishufanganlofterhhah"),Toast.LENGTH_LONG).show();
+                    Log.e("ShanghaiViewHolderhaha", Md5Utils.md5("jishufanganlofterhhah"));
                 }
             });
         }
